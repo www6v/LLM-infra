@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "litellm[proxy]>=1.74.12",
     "ray>=2.48.0",
     "verl>=0.5.0",
 ]
