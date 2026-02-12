@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: triton-vector-add
+  labels:
+    app: triton-vector-add
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: triton-vector-add
+  template:
+    metadata:
+      labels:
+        app: triton-vector-add
+    spec:
+      containers:
+        - name: triton-vector-add
+          image: triton-vector-add:latest
+          resources:
+            limits:
+              cpu: '2'
+              memory: 16Gi
+              nvidia.com/gpucores: '10'
+              nvidia.com/gpumem: 4k
+              nvidia.com/vgpu: '1'
+            requests:
+              cpu: '1'
+              memory: 4Gi
